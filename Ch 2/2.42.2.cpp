@@ -22,4 +22,6 @@ int main() {
 			count = 1;
 		}
     } while(true);
+
+    return 0;
 }
