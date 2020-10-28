@@ -11,14 +11,9 @@ int main() {
     
     std::cout << "Please input two numbers: ";
     std::cin >> a >> b;
-    try {
-        if (b == 0) {
-            throw std::logic_error("Divide by zero");
-        }
-        std::cout << "Quotient is: " << a/b;
-    } catch(std::logic_error &err) {
-        std::cout << err.what() << " terminated.";
+    if (b == 0) {
+        throw std::logic_error("Divide by zero");
     }
-
+    std::cout << "Quotient is: " << a/b;
     return 0;
 }
