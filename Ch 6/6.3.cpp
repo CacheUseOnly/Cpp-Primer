@@ -1,7 +1,6 @@
 // Write and test your own version of `fact`
 #include <iostream>
-
-int fact(int n);
+#include "6.8.h"
 
 int main() {
     std::cout << "Factorial of 6 is: " << fact(6);
