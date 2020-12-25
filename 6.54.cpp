@@ -8,7 +8,7 @@
 
 int foo(int, int);
 
-using FP = decltype(foo);
+using FP = int(*) (int, int);
 
 int main() {
     std::vector<FP> vec;
