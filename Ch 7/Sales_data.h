@@ -4,9 +4,13 @@
 class Sales_data
 {
 public:
+
+    Sales_data(std::string ISBN, int price, unsigned sales);
+
     Sales_data();
     Sales_data(std::string ISBN);
     Sales_data(std::istream &is);
+
     std::string isbn;
     int price;
     unsigned salesAmount;
@@ -17,11 +21,15 @@ public:
     inline double getAvg() const;
 };
 
-Sales_data::Sales_data(): isbn(""), price(0), salesAmount(0){    
+Sales_data(std::string isbn, int price, unsigned sales): 
+        isbn(ISBN), price(price), salesAmount(sales), revenue(price*salesAmount) {}
+
+Sales_data::Sales_data(): Sales_data(" ", 0, 0) {    
+    std::cout << "Calling: Sales_data::Sales_data()";
 }
 
-Sales_data::Sales_data(std::string ISBN) {
-    isbn = ISBN;
+Sales_data::Sales_data(std::string ISBN): Sales_data(isbn) {
+    std::cout << "Calling: Sales_data::Sales_data(std::string ISBN)";
 }
 
 Sales_data::Sales_data(std::istream &is) {
