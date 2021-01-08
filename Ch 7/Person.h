@@ -8,7 +8,7 @@ private:
     std::string address;
 public:
     Person();
-    Person(std::string name);
+    explicit Person(std::string name);      // question 7.50
     std::string getName() const;
     std::string getAddress() const;
     void setName(std::string name);
