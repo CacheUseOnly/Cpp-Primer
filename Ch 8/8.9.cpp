@@ -1,27 +1,19 @@
 /**
- * Write a function that takes and returns an istream&. The
- * function should read the stream until it hits end-of-file. The function should
- * print what it reads to the standard output. Reset the stream so that it is valid
- * before returning the stream.
+ * Use the function you wrote for the first exercise in § 8.1.2 (p.
+ * 314) to print the contents of an istringstream object.
  */
 
 #include <iostream>
 #include <string>
-#include <fstream>
+#include <sstream>
 
 std::istream& readUntilEOF(std::istream& file);
 
-constexpr auto FILENAME = "8.1.txt";
-
 int main() {
-    std::ifstream file(FILENAME);
-    auto& stream = readUntilEOF(file);
+    std::istringstream ss("blah \n fjdask jk");
 
-    // std::cout << "Stream's error bits: "
-    //     << "\nEOF: " << stream.eof()
-    //     << "\nFail: " << stream.fail()
-    //     << "\nBad: " << stream.bad();
-
+    auto& res = readUntilEOF(ss);
+    
     return 0;
 }
 
